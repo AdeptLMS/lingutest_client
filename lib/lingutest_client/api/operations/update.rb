@@ -5,10 +5,16 @@ module LingutestClient
     module Operations
       module Update
         module ClassMethods
-          def update(id, **params)
+          def update(id, **params) # rubocop:disable Metrics/AbcSize
+            schema = const_get(:UpdateSchema).call(params)
+            unless schema.success?
+              raise ValidationError,
+                    schema.errors.to_h.to_a.first.flatten.join(' ')
+            end
+
             new(
               Client.put(
-                member_resource_url(id), self::OBJECT_NAME => params
+                member_resource_url(id), self::OBJECT_NAME => schema.to_h
               ).body[self::OBJECT_NAME]
             )
           end

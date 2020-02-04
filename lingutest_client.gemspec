@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
   spec.add_dependency 'dry-configurable', '~> 0.9.0'
+  spec.add_dependency 'dry-schema', '~> 1.4.3'
   spec.add_dependency 'dry-struct', '~> 1.2.0'
   spec.add_dependency 'dry-types', '~> 1.2.2'
 

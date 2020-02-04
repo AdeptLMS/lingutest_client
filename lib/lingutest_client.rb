@@ -3,7 +3,7 @@
 $LOAD_PATH.unshift File.dirname(__FILE__)
 
 module LingutestClient
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
 
   autoload :API, 'lingutest_client/api'
   autoload :Base, 'lingutest_client/base'
@@ -19,9 +19,9 @@ module LingutestClient
 
   include Configuration
 
+  class ValidationError < StandardError; end
+
   class Client
     include LingutestClient::Connection
   end
 end
-# 'http://localhost:3000/api/v1/'
-# 'QUYYc6927AZe7jesZ8MJygtt'

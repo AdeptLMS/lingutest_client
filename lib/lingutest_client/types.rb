@@ -8,5 +8,6 @@ module LingutestClient
 
     Date = Strict::Date | JSON::Date
     Time = Strict::Time | Types::JSON::Time
+    Gender = Types::String.enum('unknown', 'male', 'female')
   end
 end

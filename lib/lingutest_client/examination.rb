@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
-require 'dry-struct'
-
 module LingutestClient
   class Examination < Base
+    CreateSchema = Dry::Schema.Params do
+      required(:exam_id).filled(:int?)
+      required(:candidate_id).filled(:int?)
+      required(:expires_at).filled(Types::Date)
+    end
+
     OBJECT_NAME = :examination
 
     include API::Resource

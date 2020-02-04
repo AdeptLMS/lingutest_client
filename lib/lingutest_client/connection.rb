@@ -10,7 +10,7 @@ module LingutestClient
       end
 
       def connection # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
-        Thread.current[:lingutest_default_connection] ||= begin
+        Thread.current[:lingutest_default_connection] ||=
           Faraday.new(url: LingutestClient.config.api_base) do |c|
             c.request :json
             c.response :raise_error
@@ -25,7 +25,6 @@ module LingutestClient
             c.headers['Accept'] = 'application/json'
             c.adapter Faraday.default_adapter
           end
-        end
       end
     end
 
