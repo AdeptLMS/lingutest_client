@@ -6,6 +6,7 @@ module LingutestClient
       required(:exam_id).filled(:int?)
       required(:candidate_id).filled(:int?)
       required(:expires_at).filled(Types::Date)
+      optional(:redirect_url).filled(:string, format?: /\Ahttps?:\/\/.+\z/i)
     end
 
     OBJECT_NAME = :examination
@@ -21,6 +22,7 @@ module LingutestClient
     attribute :total_score, Types::Integer.optional.default(0)
     attribute :total_time_spent, Types::Integer.optional.default(0)
     attribute :code, Types::String.optional.default('')
+    attribute :redirect_url, Types::String.optional
 
     attribute :status, Types::Integer.optional.default(0).enum(
       0 => 'pending',
