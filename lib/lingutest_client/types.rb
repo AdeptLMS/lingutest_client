@@ -6,7 +6,7 @@ module LingutestClient
   module Types
     include Dry.Types()
 
-    Date = Strict::Date | JSON::Date
+    DateTime = Strict::Date | JSON::Date | Strict::Time
     Time = Strict::Time | Types::JSON::Time
     Gender = Types::String.enum('unknown', 'male', 'female')
   end

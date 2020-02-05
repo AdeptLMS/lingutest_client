@@ -3,7 +3,7 @@
 $LOAD_PATH.unshift File.dirname(__FILE__)
 
 module LingutestClient
-  VERSION = '0.1.2'
+  VERSION = '0.1.3'
 
   autoload :API, 'lingutest_client/api'
   autoload :Base, 'lingutest_client/base'

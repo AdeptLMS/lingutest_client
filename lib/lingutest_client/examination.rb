@@ -3,10 +3,10 @@
 module LingutestClient
   class Examination < Base
     CreateSchema = Dry::Schema.Params do
-      required(:exam_id).filled(:int?)
-      required(:candidate_id).filled(:int?)
-      required(:expires_at).filled(Types::Date)
-      optional(:redirect_url).filled(:string, format?: /\Ahttps?:\/\/.+\z/i)
+      required(:exam_id).filled(Types::Coercible::Integer)
+      required(:candidate_id).filled(Types::Coercible::Integer)
+      required(:expires_at).filled(Types::DateTime)
+      optional(:redirect_url).filled(:string, format?: %r{\Ahttps?://.+\z}i)
     end
 
     OBJECT_NAME = :examination
@@ -35,5 +35,9 @@ module LingutestClient
     attribute :expires_at, Types::Time.optional.default(nil)
     attribute :created_at, Types::Time.optional.default(nil)
     attribute :updated_at, Types::Time.optional.default(nil)
+
+    def url
+      URI.join(LingutestClient.config.api_base.to_s, "/#{code}").to_s
+    end
   end
 end
