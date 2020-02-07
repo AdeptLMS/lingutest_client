@@ -1,15 +1,14 @@
 # LingutestClient
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lingutest_client`. To experiment with that code, run `bin/console` for an interactive prompt.
+This library will allow you to communicate with Lingu Test API. You can create examinations for client, and receive examination results. You need API token from Lingu Test to use this gem. Check [documentation](https://test.lingu.com/documentation) for API calls.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'lingutest_client', github: 'AdeptLMS/lingutest_client', branch: :master
+gem 'lingutest_client'
 ```
 
 And then execute:
@@ -18,7 +17,18 @@ And then execute:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+LingutestClient::Exam.list
+
+LingutestClient::Candidate.list
+LingutestClient::Candidate.find(id)
+LingutestClient::Candidate.create(fname:, lname:, email:, ssn:, gender:, mobile:)
+LingutestClient::Candidate.update(fname:, lname:, email:, ssn:, gender:, mobile:)
+
+LingutestClient::Examination.list
+LingutestClient::Examination.find(id)
+LingutestClient::Examination.create(candidate_id:, exam_id:, expires_at:)
+```
 
 ## Development
 
