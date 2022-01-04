@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   # spec.homepage      = "Put your gem's website or public repo URL here."
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
-  spec.metadata['allowed_push_host'] = 'https://gems.railsme.ninja'
+  # spec.metadata['allowed_push_host'] = "Set to 'http://mygemserver.com'"
 
   # spec.metadata["homepage_uri"] = spec.homepage
   # spec.metadata["source_code_uri"] = "Put your gem's public repo URL here."
@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'dry-struct', '~> 1.2.0'
   spec.add_dependency 'dry-types', '~> 1.2.2'
 
-  spec.add_dependency 'faraday'
-  spec.add_dependency 'faraday_middleware'
+  spec.add_dependency 'faraday', '~> 1.8.0'
+  spec.add_dependency 'faraday_middleware', '~> 1.2.0'
   spec.add_development_dependency 'rubocop', '~> 0.79.0'
 end
