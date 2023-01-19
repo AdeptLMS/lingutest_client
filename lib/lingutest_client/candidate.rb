@@ -11,7 +11,7 @@ module LingutestClient
       optional(:locale).filled(:string)
       optional(:mobile).filled(:string)
       optional(:gender).filled(Types::Gender)
-      optional(:ssn).filled(:string, format?: /\A([\d]{10,11}|[\d]{5,6}|^$)\z/i)
+      optional(:ssn).filled(:string, format?: /\A(\d{10,11}|\d{5,6}|^$)\z/i)
     end
     UpdateSchema = Dry::Schema.Params do
       optional(:fname).filled(:string)
@@ -20,7 +20,7 @@ module LingutestClient
       optional(:locale).filled(:string)
       optional(:mobile).filled(:string)
       optional(:gender).filled(Types::Gender)
-      optional(:ssn).filled(:string, format?: /\A([\d]{10,11}|[\d]{5,6}|^$)\z/i)
+      optional(:ssn).filled(:string, format?: /\A(\d{10,11}|\d{5,6}|^$)\z/i)
     end
 
     OBJECT_NAME = :candidate
