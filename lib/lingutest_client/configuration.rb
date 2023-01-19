@@ -13,7 +13,7 @@ module LingutestClient
                 reader: true
 
         setting :api_key,
-                constructor: :to_s,
+                constructor: proc { |value| value.to_s },
                 reader: true
       end
     end
