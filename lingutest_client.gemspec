@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Write a short summary, because RubyGems requires one.'
   spec.description   = 'Write a longer description or delete this line.'
   # spec.homepage      = "Put your gem's website or public repo URL here."
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.7.6')
 
   # spec.metadata['allowed_push_host'] = "Set to 'http://mygemserver.com'"
 
@@ -27,12 +27,12 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
-  spec.add_dependency 'dry-configurable', '~> 0.9.0'
-  spec.add_dependency 'dry-schema', '~> 1.4.3'
-  spec.add_dependency 'dry-struct', '~> 1.2.0'
-  spec.add_dependency 'dry-types', '~> 1.2.2'
+  spec.add_dependency 'dry-configurable', '~> 1.0.0'
+  spec.add_dependency 'dry-schema', '~> 1.13.0'
+  spec.add_dependency 'dry-struct', '~> 1.6.0'
+  spec.add_dependency 'dry-types', '~> 1.7.0'
 
-  spec.add_dependency 'faraday', '~> 1.8.0'
+  spec.add_dependency 'faraday', '~> 1.10.0'
   spec.add_dependency 'faraday_middleware', '~> 1.2.0'
-  spec.add_development_dependency 'rubocop', '~> 0.79.0'
+  spec.add_development_dependency 'rubocop', '~> 1.43.0'
 end
