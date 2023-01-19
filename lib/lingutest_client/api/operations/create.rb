@@ -5,7 +5,7 @@ module LingutestClient
     module Operations
       module Create
         module ClassMethods
-          def create(**params) # rubocop:disable Metrics/AbcSize
+          def create(**params)
             schema = const_get(:CreateSchema).call(params)
             unless schema.success?
               raise ValidationError,
