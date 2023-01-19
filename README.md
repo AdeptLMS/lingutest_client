@@ -15,6 +15,17 @@ And then execute:
 
     $ bundle install
 
+## Configuration
+
+```ruby
+# config/initializers/lingutest_client.rb
+
+LingutestClient.configure do |config|
+  config.api_base = 'https://test.lingu.com/api/v1/'
+  config.api_key  = 'yourLinguTestApiKey'
+end
+```
+
 ## Usage
 
 ```ruby
