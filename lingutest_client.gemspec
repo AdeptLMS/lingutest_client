@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   # spec.homepage      = "Put your gem's website or public repo URL here."
   spec.required_ruby_version = Gem::Requirement.new('>= 2.7.6')
 
+  spec.metadata['rubygems_mfa_required'] = 'true'
   # spec.metadata['allowed_push_host'] = "Set to 'http://mygemserver.com'"
 
   # spec.metadata["homepage_uri"] = spec.homepage

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lingutest_client (0.1.5)
+    lingutest_client (0.2.0)
       dry-configurable (~> 1.0.0)
       dry-schema (~> 1.13.0)
       dry-struct (~> 1.6.0)
