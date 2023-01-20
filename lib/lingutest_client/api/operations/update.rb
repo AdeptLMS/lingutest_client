@@ -5,7 +5,7 @@ module LingutestClient
     module Operations
       module Update
         module ClassMethods
-          def update(id, **params) # rubocop:disable Metrics/AbcSize
+          def update(id, **params)
             schema = const_get(:UpdateSchema).call(params)
             unless schema.success?
               raise ValidationError,
