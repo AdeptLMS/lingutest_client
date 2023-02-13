@@ -10,6 +10,7 @@ module LingutestClient
     attribute :id, Types::Coercible::Integer.optional.default(0)
     attribute :name, Types::Coercible::String.optional.default('')
     attribute :description, Types::Coercible::String.optional.default('')
+    attribute :price,Types::Coercible::Decimal.optional.default(0)
     attribute :updated_at, Types::DateTime.optional.default(nil)
   end
 end

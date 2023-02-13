@@ -7,6 +7,10 @@ module LingutestClient
       required(:candidate_id).filled(Types::Coercible::Integer)
       required(:expires_at).filled(Types::DateTime)
       optional(:redirect_url).filled(:string, format?: %r{\Ahttps?://.+\z}i)
+
+      optional(:team_id).filled(Types::Coercible::String)
+      optional(:team_group_id).filled(Types::Coercible::String)
+      optional(:student_id).filled(Types::Coercible::String)
     end
 
     OBJECT_NAME = :examination
@@ -20,9 +24,14 @@ module LingutestClient
     attribute :exam, Exam.optional.default(nil)
     attribute :candidate, Candidate.optional.default(nil)
     attribute :total_score, Types::Integer.optional.default(0)
+    attribute :max_score, Types::Integer.optional.default(0)
     attribute :total_time_spent, Types::Integer.optional.default(0)
     attribute :code, Types::String.optional.default('')
     attribute :redirect_url, Types::String.optional
+
+    attribute :team_id, Types::String.optional.default(nil)
+    attribute :team_group_id, Types::String.optional.default(nil)
+    attribute :student_id, Types::String.optional.default(nil)
 
     attribute :status, Types::Integer.optional.default(0).enum(
       0 => 'pending',
