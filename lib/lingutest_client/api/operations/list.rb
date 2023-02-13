@@ -4,7 +4,16 @@ module LingutestClient
   module API
     module Operations
       module List
+        DELEGATED_METHODS = %i[
+          each
+          map
+          size
+          last
+          present?
+        ].freeze
+
         class << self
+
           def module(list_type)
             Module.new do
               class_methods_module = Module.new
