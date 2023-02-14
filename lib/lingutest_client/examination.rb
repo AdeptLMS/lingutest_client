@@ -26,9 +26,11 @@ module LingutestClient
     attribute :candidate, Candidate.optional.default(nil)
     attribute :total_score, Types::Integer.optional.default(0)
     attribute :max_score, Types::Integer.optional.default(0)
+    attribute :tasks_limit, Types::Integer.optional.default(0)
     attribute :total_time_spent, Types::Integer.optional.default(0)
     attribute :code, Types::String.optional.default('')
     attribute :redirect_url, Types::String.optional
+    attribute :price, Types::Coercible::Decimal.optional.default(0)
 
     attribute :team_id, Types::String.optional.default(nil)
     attribute :team_group_id, Types::String.optional.default(nil)
