@@ -3,23 +3,13 @@
 module LingutestClient
   module API
     module Operations
-      module List
-        DELEGATED_METHODS = %i[
-          each
-          map
-          size
-          last
-          present?
-          find
-          select
-        ].freeze
-
+      module Where
         class << self
           def module(list_type)
             Module.new do
               class_methods_module = Module.new
-              class_methods_module.define_method :list do
-                list_type.new(Client.get(resource_url).body)
+              class_methods_module.define_method :where do |params|
+                list_type.new(Client.get(resource_url, params).body)
               end
               define_singleton_method :included do |base|
                 base.extend class_methods_module
