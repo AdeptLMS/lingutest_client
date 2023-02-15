@@ -6,6 +6,7 @@ module LingutestClient
 
     include API::Resource
     include API::Operations::List.module(ExamList)
+    include API::Operations::Where.module(ExamList)
 
     attribute :id, Types::Coercible::Integer.optional.default(0)
     attribute :name, Types::Coercible::String.optional.default('')
