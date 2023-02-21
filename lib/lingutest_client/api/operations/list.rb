@@ -6,12 +6,14 @@ module LingutestClient
       module List
         DELEGATED_METHODS = %i[
           each
-          map
-          size
-          last
-          present?
+          empty?
           find
+          first
+          last
+          map
+          reject
           select
+          size
         ].freeze
 
         class << self
