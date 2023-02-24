@@ -2,6 +2,8 @@
 
 module LingutestClient
   class Examination < Base
+    OBJECT_NAME = :examination
+
     CreateSchema = Dry::Schema.Params do
       required(:exam_id).filled(Types::Coercible::Integer)
       required(:candidate_id).filled(Types::Coercible::Integer)
@@ -13,10 +15,16 @@ module LingutestClient
       optional(:student_id).filled(Types::Coercible::String)
     end
 
-    OBJECT_NAME = :examination
+    FilterSchema = Dry::Schema.Params do
+      config.validate_keys = true
+      optional(:team_id_eq).filled(Types::Coercible::String)
+      optional(:team_group_id_eq).filled(Types::Coercible::String)
+      optional(:student_id_eq).filled(Types::Coercible::String)
+    end
+
 
     include API::Resource
-    include API::Operations::List.module(ExaminationList)
+    include API::Operations::List.module(ExaminationList, FilterSchema)
     include API::Operations::Create
     include API::Operations::Find
 
