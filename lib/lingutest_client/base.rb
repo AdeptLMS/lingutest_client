@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require 'forwardable'
-require 'dry-struct'
-require 'dry-schema'
-
 module LingutestClient
   class Base < Dry::Struct
     extend Forwardable

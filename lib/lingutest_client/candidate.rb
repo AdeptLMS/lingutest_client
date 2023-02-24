@@ -25,12 +25,12 @@ module LingutestClient
 
     OBJECT_NAME = :candidate
 
-    include API::Resource
-    include API::Operations::List.module(CandidateList)
-    include API::Operations::Create
-    include API::Operations::Find
-    include API::Operations::Delete
-    include API::Operations::Update
+    include Api::Resource
+    include Api::Operations::List.module(CandidateList)
+    include Api::Operations::Create
+    include Api::Operations::Find
+    include Api::Operations::Delete
+    include Api::Operations::Update
 
     attribute :id, Types::Coercible::Integer.default(0)
     attribute :email, Types::Coercible::String.default('')

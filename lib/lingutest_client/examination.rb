@@ -22,11 +22,10 @@ module LingutestClient
       optional(:student_id_eq).filled(Types::Coercible::String)
     end
 
-
-    include API::Resource
-    include API::Operations::List.module(ExaminationList, FilterSchema)
-    include API::Operations::Create
-    include API::Operations::Find
+    include Api::Resource
+    include Api::Operations::List.module(ExaminationList, FilterSchema)
+    include Api::Operations::Create
+    include Api::Operations::Find
 
     attribute :id, Types::Integer.optional
     attribute :exam, Exam.optional.default(nil)

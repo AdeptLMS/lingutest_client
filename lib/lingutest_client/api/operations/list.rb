@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module LingutestClient
-  module API
+  module Api
     module Operations
       module List
         DELEGATED_METHODS = %i[
@@ -17,7 +17,7 @@ module LingutestClient
         ].freeze
 
         class << self
-          def module(list_type, params_schema = nil)
+          def module(list_type, params_schema = nil) # rubocop:disable Metrics/MethodLength
             Module.new do
               class_methods_module = Module.new
 

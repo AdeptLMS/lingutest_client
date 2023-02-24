@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module LingutestClient
-  module API
+  module Api
     module Operations
       module Update
         module ClassMethods
