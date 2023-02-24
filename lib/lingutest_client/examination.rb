@@ -17,7 +17,6 @@ module LingutestClient
 
     include API::Resource
     include API::Operations::List.module(ExaminationList)
-    include API::Operations::Where.module(ExaminationList)
     include API::Operations::Create
     include API::Operations::Find
 

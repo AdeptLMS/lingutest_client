@@ -7,7 +7,6 @@ module LingutestClient
       autoload :Delete, 'lingutest_client/api/operations/delete'
       autoload :Find, 'lingutest_client/api/operations/find'
       autoload :List, 'lingutest_client/api/operations/list'
-      autoload :Where, 'lingutest_client/api/operations/where'
       autoload :Update, 'lingutest_client/api/operations/update'
     end
   end
