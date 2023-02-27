@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://test.lingu.com/api/v1/examinations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Token:
+      - Token token="<API_KEY>"
+      User-Agent:
+      - Lingutest Ruby Client
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      etag:
+      - W/"225a2bdbd3ff25331cfe3a28d27ba6a7"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 20ce39ab-848f-428f-b98e-8c6cb4eb14fc
+      x-runtime:
+      - '0.016852'
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"examinations":[{"id":31,"exam":{"id":2,"name":"Associate Degree in
+        Psychology","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:35.457Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T10:15:24.566Z","updated_at":"2023-02-22T10:15:24.566Z","expires_at":"2023-03-24T10:15:24.522Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"8XQRJn","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":32,"exam":{"id":2,"name":"Associate
+        Degree in Psychology","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:35.457Z"},"candidate":{"id":12,"fname":"Alexandra","lname":"Lee","email":"alexandra.lee@example.com","gender":"female","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T10:15:24.807Z","updated_at":"2023-02-22T10:15:24.807Z","expires_at":"2023-03-24T10:15:24.795Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"Pxc0oE","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":33,"exam":{"id":4,"name":"Associate
+        Degree in Commerce","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-17T15:06:59.641Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T10:15:31.831Z","updated_at":"2023-02-22T10:15:31.831Z","expires_at":"2023-03-24T10:15:31.822Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"FpvVL0","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":34,"exam":{"id":2,"name":"Associate
+        Degree in Psychology","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:35.457Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T11:25:57.396Z","updated_at":"2023-02-22T11:25:57.396Z","expires_at":"2023-03-24T11:25:57.382Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"07LUDW","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":35,"exam":{"id":3,"name":"Associate
+        Degree in Design","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:37.515Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T11:25:57.434Z","updated_at":"2023-02-22T11:25:57.434Z","expires_at":"2023-03-24T11:25:57.425Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"8eqa6X","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":36,"exam":{"id":4,"name":"Associate
+        Degree in Commerce","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-17T15:06:59.641Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T11:25:57.463Z","updated_at":"2023-02-22T11:25:57.463Z","expires_at":"2023-03-24T11:25:57.453Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"m3HNZM","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null}]}'
+  recorded_at: Mon, 27 Feb 2023 11:50:38 GMT
+- request:
+    method: get
+    uri: https://test.lingu.com/api/v1/examinations?student_id_eq=1&team_group_id_eq=2&team_id_eq=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Token:
+      - Token token="<API_KEY>"
+      User-Agent:
+      - Lingutest Ruby Client
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      etag:
+      - W/"225a2bdbd3ff25331cfe3a28d27ba6a7"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 6262da30-7771-48f4-acb2-95e85a002f73
+      x-runtime:
+      - '0.012411'
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"examinations":[{"id":31,"exam":{"id":2,"name":"Associate Degree in
+        Psychology","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:35.457Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T10:15:24.566Z","updated_at":"2023-02-22T10:15:24.566Z","expires_at":"2023-03-24T10:15:24.522Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"8XQRJn","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":32,"exam":{"id":2,"name":"Associate
+        Degree in Psychology","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:35.457Z"},"candidate":{"id":12,"fname":"Alexandra","lname":"Lee","email":"alexandra.lee@example.com","gender":"female","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T10:15:24.807Z","updated_at":"2023-02-22T10:15:24.807Z","expires_at":"2023-03-24T10:15:24.795Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"Pxc0oE","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":33,"exam":{"id":4,"name":"Associate
+        Degree in Commerce","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-17T15:06:59.641Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T10:15:31.831Z","updated_at":"2023-02-22T10:15:31.831Z","expires_at":"2023-03-24T10:15:31.822Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"FpvVL0","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":34,"exam":{"id":2,"name":"Associate
+        Degree in Psychology","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:35.457Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T11:25:57.396Z","updated_at":"2023-02-22T11:25:57.396Z","expires_at":"2023-03-24T11:25:57.382Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"07LUDW","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":35,"exam":{"id":3,"name":"Associate
+        Degree in Design","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:37.515Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T11:25:57.434Z","updated_at":"2023-02-22T11:25:57.434Z","expires_at":"2023-03-24T11:25:57.425Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"8eqa6X","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null},{"id":36,"exam":{"id":4,"name":"Associate
+        Degree in Commerce","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-17T15:06:59.641Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-22T11:25:57.463Z","updated_at":"2023-02-22T11:25:57.463Z","expires_at":"2023-03-24T11:25:57.453Z","max_score":500,"total_score":0,"tasks_limit":5,"total_time_spent":0,"status":"pending","locale":"nb","code":"m3HNZM","redirect_url":null,"team_id":null,"team_group_id":null,"student_id":null,"price":"9.99","review_status":"no_review","comment":null}]}'
+  recorded_at: Mon, 27 Feb 2023 11:50:38 GMT
+- request:
+    method: get
+    uri: https://test.lingu.com/api/v1/examinations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Token:
+      - Token token="<API_KEY>"
+      User-Agent:
+      - Lingutest Ruby Client
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      date:
+      - Mon, 27 Feb 2023 15:48:46 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache
+      x-request-id:
+      - 910f2a63d67edf634298274b2aebb04a
+      x-runtime:
+      - '0.009612'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      cf-cache-status:
+      - DYNAMIC
+      report-to:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=FV8MSvHm0MZB0hhanAgdE76nUVwBKl2%2Fyljyu6HL6dTyJMhdUSjac7FcFV00W4pguWxIXXxnt7Gi08VW%2BMxHpod6bDHL0%2BiNJmd9DVVvc4Jv08yDC98c5BMuI7DX8kUppw%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server:
+      - cloudflare
+      cf-ray:
+      - 7a02110f9907b3af-MUC
+      alt-svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"error":"401 Unauthorized"}'
+  recorded_at: Mon, 27 Feb 2023 15:48:46 GMT
+recorded_with: VCR 6.1.0

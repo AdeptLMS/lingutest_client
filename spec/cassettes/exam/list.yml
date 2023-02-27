@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://test.lingu.com/api/v1/exams
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Token:
+      - Token token="<API_KEY>"
+      User-Agent:
+      - Lingutest Ruby Client
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      etag:
+      - W/"d99d3faefc0d4dc426fa0d1d18ab8f2b"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - c1e97ff2-1ff8-44e1-bcc7-dba31574b771
+      x-runtime:
+      - '0.004460'
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"exams":[{"id":1,"name":"Test #1","price":"2300.0","locale":"nb","description":"","updated_at":"2023-02-08T14:34:24.004Z"},{"id":2,"name":"Associate
+        Degree in Psychology","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:35.457Z"},{"id":3,"name":"Associate
+        Degree in Design","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-14T15:34:37.515Z"},{"id":4,"name":"Associate
+        Degree in Commerce","price":"9.99","locale":"nb","description":null,"updated_at":"2023-02-17T15:06:59.641Z"},{"id":5,"name":"Master
+        of Psychology","price":"2334.0","locale":"nb","description":null,"updated_at":"2023-02-17T15:13:58.519Z"}]}'
+  recorded_at: Mon, 27 Feb 2023 11:51:50 GMT
+recorded_with: VCR 6.1.0

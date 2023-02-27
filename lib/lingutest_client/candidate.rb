@@ -39,7 +39,6 @@ module LingutestClient
     attribute :mobile, Types::Coercible::String.default('')
     attribute :locale, Types::Coercible::String.default('')
     attribute :ssn, Types::Coercible::String.default('')
-    attribute :gender,
-              Types::String.optional.enum('unknown', 'male', 'female')
+    attribute :gender, Types::String.optional.enum('unknown', 'male', 'female')
   end
 end

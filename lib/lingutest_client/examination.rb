@@ -42,12 +42,12 @@ module LingutestClient
     attribute :team_group_id, Types::String.optional.default(nil)
     attribute :student_id, Types::String.optional.default(nil)
 
-    attribute :status, Types::Integer.optional.default(0).enum(
-      0 => 'pending',
-      1 => 'in_progress',
-      2 => 'completed',
-      3 => 'pending_review',
-      4 => 'reviewed'
+    attribute :status, Types::String.optional.enum(
+      'pending',
+      'in_progress',
+      'completed',
+      'pending_review',
+      'reviewed'
     )
 
     attribute :expires_at, Types::Time.optional.default(nil)

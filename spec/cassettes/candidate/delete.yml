@@ -1,0 +1,33 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://test.lingu.com/api/v1/candidates/30
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Token:
+      - Token token="<API_KEY>"
+      User-Agent:
+      - Lingutest Ruby Client
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      cache-control:
+      - no-cache
+      x-request-id:
+      - ccd6d645-60fc-4536-9598-06d9f29ca0b9
+      x-runtime:
+      - '0.041006'
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 27 Feb 2023 13:50:51 GMT
+recorded_with: VCR 6.1.0

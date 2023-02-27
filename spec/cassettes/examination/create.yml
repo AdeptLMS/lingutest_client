@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.lingu.com/api/v1/examinations
+    body:
+      encoding: UTF-8
+      string: '{"examination":{"exam_id":1,"candidate_id":18,"expires_at":"2023-10-10
+        00:00:00 +0300","redirect_url":"http://example.com","team_id":"1","team_group_id":"1","student_id":"1"}}'
+    headers:
+      X-Api-Token:
+      - Token token="<API_KEY>"
+      User-Agent:
+      - Lingutest Ruby Client
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      content-type:
+      - application/json
+      etag:
+      - W/"8045f0e6525983e7c2a321af496900a0"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - a3f8f967-8ddc-44be-8e39-155478f5cf2b
+      x-runtime:
+      - '0.326519'
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"examination":{"id":41,"exam":{"id":1,"name":"Test #1","price":"2300.0","locale":"nb","description":"","updated_at":"2023-02-08T14:34:24.004Z"},"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},"created_at":"2023-02-27T13:23:05.452Z","updated_at":"2023-02-27T13:23:05.452Z","expires_at":"2023-10-09T21:00:00.000Z","max_score":2300,"total_score":0,"tasks_limit":23,"total_time_spent":0,"status":"pending","locale":"nb","code":"MAQ11r","redirect_url":"http://example.com","team_id":"1","team_group_id":"1","student_id":"1","price":"2300.0","review_status":"no_review","comment":null}}'
+  recorded_at: Mon, 27 Feb 2023 13:23:05 GMT
+recorded_with: VCR 6.1.0
