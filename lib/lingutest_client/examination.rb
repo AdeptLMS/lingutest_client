@@ -8,7 +8,7 @@ module LingutestClient
       required(:exam_id).filled(Types::Coercible::Integer)
       required(:candidate_id).filled(Types::Coercible::Integer)
       required(:expires_at).filled(Types::DateTime)
-      optional(:redirect_url).filled(:string, format?: %r{\Ahttps?://.+\z}i)
+      optional(:redirect_url).filled(Types::Url)
 
       optional(:team_id).filled(Types::Coercible::String)
       optional(:team_group_id).filled(Types::Coercible::String)

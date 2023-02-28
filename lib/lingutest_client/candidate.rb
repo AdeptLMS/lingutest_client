@@ -1,26 +1,24 @@
 # frozen_string_literal: true
 
-require 'uri/mailto'
-
 module LingutestClient
   class Candidate < Base
     CreateSchema = Dry::Schema.Params do
       required(:fname).filled(:string)
       required(:lname).filled(:string)
-      required(:email).filled(:string, format?: URI::MailTo::EMAIL_REGEXP)
+      required(:email).filled(Types::Email)
       optional(:locale).filled(:string)
       optional(:mobile).filled(:string)
       optional(:gender).filled(Types::Gender)
-      optional(:ssn).filled(:string, format?: /\A(\d{10,11}|\d{5,6}|^$)\z/i)
+      optional(:ssn).filled(Types::Ssn)
     end
     UpdateSchema = Dry::Schema.Params do
       optional(:fname).filled(:string)
       optional(:lname).filled(:string)
-      optional(:email).filled(:string, format?: URI::MailTo::EMAIL_REGEXP)
+      optional(:email).filled(Types::Email)
       optional(:locale).filled(:string)
       optional(:mobile).filled(:string)
       optional(:gender).filled(Types::Gender)
-      optional(:ssn).filled(:string, format?: /\A(\d{10,11}|\d{5,6}|^$)\z/i)
+      optional(:ssn).filled(Types::Ssn)
     end
 
     OBJECT_NAME = :candidate
@@ -39,6 +37,6 @@ module LingutestClient
     attribute :mobile, Types::Coercible::String.default('')
     attribute :locale, Types::Coercible::String.default('')
     attribute :ssn, Types::Coercible::String.default('')
-    attribute :gender, Types::String.optional.enum('unknown', 'male', 'female')
+    attribute :gender, Types::Gender
   end
 end
