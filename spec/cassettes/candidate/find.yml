@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://test.lingu.com/api/v1/candidates/18
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Token:
+      - Token token="<API_KEY>"
+      User-Agent:
+      - Lingutest Ruby Client
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      etag:
+      - W/"d30621b676e94427ab45a7c7089290b5"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 02120e8f-f7f1-4df0-be3b-acc03c5d9d44
+      x-runtime:
+      - '0.061851'
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"candidate":{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"}}'
+  recorded_at: Mon, 27 Feb 2023 13:40:48 GMT
+recorded_with: VCR 6.1.0

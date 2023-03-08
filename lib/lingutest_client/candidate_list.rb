@@ -3,7 +3,7 @@
 module LingutestClient
   class CandidateList < Base
     include Enumerable
-    delegate %i[each size last] => :candidates
+    delegate ::LingutestClient::Api::Operations::List::DELEGATED_METHODS => :candidates
 
     attribute :candidates, Types::Array.of(Candidate)
   end

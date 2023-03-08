@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 module LingutestClient
-  VERSION = '0.2.1'
+  class ValidationError < StandardError
+  end
 end

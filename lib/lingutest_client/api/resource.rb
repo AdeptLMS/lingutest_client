@@ -3,7 +3,7 @@
 require 'ostruct'
 
 module LingutestClient
-  module API
+  module Api
     module Resource
       module ClassMethods
         def resource_url
