@@ -57,5 +57,9 @@ module LingutestClient
     def url
       URI.join(LingutestClient.config.api_base.to_s, "/#{code}").to_s
     end
+
+    def result_url
+      URI.join(LingutestClient.config.api_base.to_s, "/examinations/#{id}").to_s
+    end
   end
 end

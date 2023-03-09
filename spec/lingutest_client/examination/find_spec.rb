@@ -29,4 +29,5 @@ RSpec.describe LingutestClient::Examination, '.find' do
   it { expect(find.created_at).to eq(Time.parse('2023-02-26 18:33:04.892000000 +0000')) }
   it { expect(find.updated_at).to eq(Time.parse('2023-02-26 18:33:04.892000000 +0000')) }
   it { expect(find.url).to eq('https://test.lingu.com/rMefoe') }
+  it { expect(find.result_url).to eq('https://test.lingu.com/examinations/38') }
 end
