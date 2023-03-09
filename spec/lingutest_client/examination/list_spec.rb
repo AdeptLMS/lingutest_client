@@ -12,6 +12,12 @@ RSpec.describe LingutestClient::Examination, '.list' do
   it { expect(list).to be_a(LingutestClient::ExaminationList) }
   it { expect(list.examinations).not_to be_empty }
   it { expect(list.examinations).to all(be_a(described_class)) }
+  it { expect(list.limit_value).to eq(10) }
+  it { expect(list.current_page).to eq(1) }
+  it { expect(list.total_pages).to eq(1) }
+  it { expect(list.total_count).to eq(6) }
+  it { expect(list.per_page).to eq(10) }
+  it { expect(list.page).to eq(1) }
 
   describe 'delegate methods' do
     it { is_expected.to delegate_method(:each).to(:examinations) }
@@ -37,5 +43,18 @@ RSpec.describe LingutestClient::Examination, '.list' do
 
       it { expect { list }.to raise_error(ArgumentError) }
     end
+  end
+
+  describe 'pagination' do
+    subject(:list) { described_class.list(page: 2, per_page: 2) }
+
+    it { expect(list).not_to be_empty }
+    it { expect(list.examinations.size).to eq(2) }
+    it { expect(list.limit_value).to eq(2) }
+    it { expect(list.current_page).to eq(2) }
+    it { expect(list.total_pages).to eq(3) }
+    it { expect(list.total_count).to eq(6) }
+    it { expect(list.per_page).to eq(2) }
+    it { expect(list.page).to eq(2) }
   end
 end

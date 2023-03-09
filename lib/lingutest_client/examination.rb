@@ -17,6 +17,9 @@ module LingutestClient
 
     FilterSchema = Dry::Schema.Params do
       config.validate_keys = true
+      optional(:page).filled(Types::Coercible::Integer)
+      optional(:per_page).filled(Types::Coercible::Integer)
+
       optional(:team_id_eq).filled(Types::Coercible::String)
       optional(:team_group_id_eq).filled(Types::Coercible::String)
       optional(:student_id_eq).filled(Types::Coercible::String)
@@ -59,7 +62,7 @@ module LingutestClient
     end
 
     def result_url
-      URI.join(LingutestClient.config.api_base.to_s, "/examinations/#{id}").to_s
+      URI.join(LingutestClient.config.api_base.to_s, "/examinations/#{code}").to_s
     end
   end
 end
