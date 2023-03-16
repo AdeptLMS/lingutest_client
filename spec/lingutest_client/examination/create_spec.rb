@@ -37,6 +37,8 @@ RSpec.describe LingutestClient::Examination, '.create' do
   it { expect(create.team_group_id).to eq('1') }
   it { expect(create.student_id).to eq('1') }
   it { expect(create.status).to eq('pending') }
+  it { expect(create.pending?).to be(true) }
+  it { expect(create.completed?).to be(false) }
   it { expect(create.expires_at).to eq(Time.parse('2023-10-09 21:00:00.000000000 +0000')) }
   it { expect(create.created_at).to eq(Time.parse('2023-02-27 13:23:05.452000000 +0000')) }
   it { expect(create.updated_at).to eq(Time.parse('2023-02-27 13:23:05.452000000 +0000')) }
