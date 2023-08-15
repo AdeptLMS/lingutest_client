@@ -21,10 +21,18 @@ module LingutestClient
       optional(:ssn).filled(Types::Ssn)
     end
 
+    FilterSchema = Dry::Schema.Params do
+      optional(:page)
+      optional(:per_page)
+      optional(:email_eq).filled(Types::Email)
+      optional(:fname_eq).filled(:string)
+      optional(:lname_eq).filled(:string)
+    end
+
     OBJECT_NAME = :candidate
 
     include Api::Resource
-    include Api::Operations::List.module(CandidateList)
+    include Api::Operations::List.module(CandidateList, FilterSchema)
     include Api::Operations::Create
     include Api::Operations::Find
     include Api::Operations::Delete
