@@ -4,6 +4,14 @@ module LingutestClient
   class Examination < Base
     OBJECT_NAME = :examination
 
+    STATUSES = %w[
+      pending
+      in_progress
+      completed
+      pending_review
+      reviewed
+    ].freeze
+
     CreateSchema = Dry::Schema.Params do
       required(:exam_id).filled(Types::Coercible::Integer)
       required(:candidate_id).filled(Types::Coercible::Integer)
@@ -17,6 +25,9 @@ module LingutestClient
 
     FilterSchema = Dry::Schema.Params do
       config.validate_keys = true
+      optional(:page).filled(Types::Coercible::Integer)
+      optional(:per_page).filled(Types::Coercible::Integer)
+
       optional(:team_id_eq).filled(Types::Coercible::String)
       optional(:team_group_id_eq).filled(Types::Coercible::String)
       optional(:student_id_eq).filled(Types::Coercible::String)
@@ -42,13 +53,7 @@ module LingutestClient
     attribute :team_group_id, Types::String.optional.default(nil)
     attribute :student_id, Types::String.optional.default(nil)
 
-    attribute :status, Types::String.optional.enum(
-      'pending',
-      'in_progress',
-      'completed',
-      'pending_review',
-      'reviewed'
-    )
+    attribute :status, Types::String.optional.enum(*STATUSES)
 
     attribute :expires_at, Types::Time.optional.default(nil)
     attribute :created_at, Types::Time.optional.default(nil)
@@ -56,6 +61,16 @@ module LingutestClient
 
     def url
       URI.join(LingutestClient.config.api_base.to_s, "/#{code}").to_s
+    end
+
+    def result_url
+      URI.join(LingutestClient.config.api_base.to_s, "/examinations/#{code}").to_s
+    end
+
+    STATUSES.each do |status|
+      define_method "#{status}?" do
+        self.status == status
+      end
     end
   end
 end
