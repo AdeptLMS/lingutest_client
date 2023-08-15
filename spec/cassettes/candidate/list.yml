@@ -36,4 +36,46 @@ http_interactions:
       encoding: UTF-8
       string: '{"candidates":[{"id":18,"fname":"Sean","lname":"Palmer","email":"sean.palmer@example.com","gender":"male","ssn":"12029845666","locale":"en","mobile":"91122335"},{"id":12,"fname":"Alexandra","lname":"Lee","email":"alexandra.lee@example.com","gender":"female","ssn":"12029845666","locale":"en","mobile":"91122335"}]}'
   recorded_at: Mon, 27 Feb 2023 12:11:58 GMT
+- request:
+    method: get
+    uri: https://test.lingu.com/api/v1/candidates?email_eq=test%40lingu.no
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Token:
+      - Token token="<API_KEY>"
+      User-Agent:
+      - Lingutest Ruby Client
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.19.6
+      date:
+      - Tue, 15 Aug 2023 19:35:46 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"3d3b31c61ce60e9412f2609e02560e44"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 0d8f3a7f-66f2-45d8-83c4-9a0cab1919cd
+      x-runtime:
+      - '0.053645'
+    body:
+      encoding: UTF-8
+      string: '{"limit_value":100,"current_page":1,"total_pages":1,"total_count":1,"per_page":100,"page":1,"candidates":[{"id":2,"fname":"Test","lname":"Candidate","email":"test@lingu.no","gender":"male","ssn":"120423133221","locale":"nb","mobile":"12312332"}]}'
+  recorded_at: Tue, 15 Aug 2023 19:35:46 GMT
 recorded_with: VCR 6.1.0

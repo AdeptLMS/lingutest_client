@@ -24,4 +24,12 @@ RSpec.describe LingutestClient::Candidate, '.list' do
     it { is_expected.to delegate_method(:select).to(:candidates) }
     it { is_expected.to delegate_method(:size).to(:candidates) }
   end
+
+  context 'with filter params' do
+    subject(:list) { described_class.list(email_eq: 'test@lingu.no') }
+
+    it { expect(list).to be_a(LingutestClient::CandidateList) }
+    it { expect(list.candidates.size).to eq(1) }
+    it { expect(list.candidates).to all(be_a(described_class)) }
+  end
 end
