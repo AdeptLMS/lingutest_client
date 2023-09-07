@@ -31,6 +31,10 @@ module LingutestClient
       optional(:team_id_eq).filled(Types::Coercible::String)
       optional(:team_group_id_eq).filled(Types::Coercible::String)
       optional(:student_id_eq).filled(Types::Coercible::String)
+
+      optional(:price_gteq).filled(Types::Coercible::Integer)
+      optional(:created_at_gteq).filled(Types::DateTime)
+      optional(:created_at_lteq).filled(Types::DateTime)
     end
 
     include Api::Resource
